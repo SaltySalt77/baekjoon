@@ -17,6 +17,6 @@ int	main(void)
 			max = tmp;
 		average += tmp;
 	}
-	printf("%f", (double) average / max * 100);
+	printf("%f", (double) average / max * 100 / n);
 	return (0);
 }
