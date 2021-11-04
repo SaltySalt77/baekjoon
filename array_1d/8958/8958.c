@@ -13,6 +13,16 @@ int	ft_iterative_plus(int nb)
 	return (result);
 }
 
+void	initialize_str(char	*str)
+{
+	int i;
+
+	i = 0;
+	while (i < 81)
+		str[i++] = 0;
+}
+
+
 int	main(void)
 {
 	char	str[81];
@@ -27,18 +37,19 @@ int	main(void)
 	for (int i = 0; i < n; i++)
 	{
 		scanf("%s", str);
-		j = 0;
+		j = 0;		
 		while (str[j])
 		{
-			while (str[j] == 'O')
+			while (str[j++] == 'O')
 				tmp++;
-			if (tmp != 0)
-			{
+			if (tmp != 'O')
 				result += ft_iterative_plus(tmp);
-				tmp = 0;
-			}
-			j++;
+			tmp = 0;
+			
 		}
-		printf("%d", result);
+		printf("%d\n", result);
+		result = 0;
+		initialize_str(str);
 	}
+	return (0);
 }
